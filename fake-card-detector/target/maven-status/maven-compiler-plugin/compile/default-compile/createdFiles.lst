@@ -1,0 +1,4 @@
+com\college\fakecard\controller\CardController.class
+com\college\fakecard\FakeCardDetectorApplication.class
+com\college\fakecard\model\DetectionResult.class
+com\college\fakecard\service\CardAnalysisService.class

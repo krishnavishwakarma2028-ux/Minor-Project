@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CardShield | Card Risk Screening</title><link rel="stylesheet" href="/css/style.css">
+</head><body>
+<main class="shell"><nav><a class="brand" href="/">Card<span>Shield</span></a><span class="tag">AIML MINOR PROJECT</span></nav>
+<section class="hero"><div><p class="eyebrow">EXPLAINABLE RISK SCREENING</p><h1>Detect suspicious<br><em>card images.</em></h1><p class="intro">Upload a sample card image and get an explainable quality and format-risk assessment in seconds.</p></div><div class="stat"><b>3</b><span>visual & format<br>checks per scan</span></div></section>
+<section class="panel"><div class="panel-copy"><h2>Start an assessment</h2><p>For academic demonstration only. Use synthetic or consented sample cards—never upload confidential personal documents.</p><div th:if="${error}" class="error" th:text="${error}"></div></div>
+<form method="post" action="/analyse" enctype="multipart/form-data">
+  <label class="dropzone" for="cardImage"><input id="cardImage" name="cardImage" type="file" accept="image/png,image/jpeg" required><span class="upload-icon">↑</span><strong id="fileLabel">Choose card image</strong><small>PNG or JPG · maximum 10 MB</small></label>
+  <label>Card / reference identifier <span>(optional)</span><input name="cardNumber" maxlength="24" placeholder="e.g. ABCD 1234 5678"></label>
+  <button type="submit">Analyse card <span>→</span></button>
+</form></section>
+<footer>CardShield · Java Spring Boot · OpenCV/OCR-ready architecture</footer></main>
+<script src="/js/app.js"></script></body></html>

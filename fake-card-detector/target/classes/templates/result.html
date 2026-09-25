@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Assessment | CardShield</title><link rel="stylesheet" href="/css/style.css"></head>
+<body><main class="shell"><nav><a class="brand" href="/">Card<span>Shield</span></a><a class="back" href="/">← New assessment</a></nav>
+<section class="result-head"><p class="eyebrow">ASSESSMENT COMPLETE</p><h1 th:text="${filename}">image.jpg</h1><p>Image dimensions: <b th:text="${result.width} + ' × ' + ${result.height} + ' px'"></b></p></section>
+<section class="result-grid"><article class="verdict" th:classappend="${result.verdict == 'SUSPICIOUS'} ? ' danger' : (${result.verdict == 'REVIEW REQUIRED'} ? ' warning' : ' safe')"><p>SCREENING RESULT</p><h2 th:text="${result.verdict}">LOW RISK</h2><div class="score"><strong th:text="${result.riskScore} + '/100'">0/100</strong><span>risk score</span></div><p class="confidence">Assessment confidence: <b th:text="${result.confidence}">Moderate</b></p></article>
+<article class="findings"><h2>Detected signals</h2><ul><li th:each="alert : ${result.alerts}" th:text="${alert}"></li></ul></article>
+<article class="findings checks"><h2>Checks passed</h2><ul><li th:each="check : ${result.checks}" th:text="${check}"></li></ul></article></section>
+<aside class="notice" th:text="${result.note}"></aside></main></body></html>
