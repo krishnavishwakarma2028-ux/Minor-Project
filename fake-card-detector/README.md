@@ -34,6 +34,3 @@ Risk score `< 20`: **Low Risk**; `20–44`: **Review Required**; `45+`: **Suspic
 
 For a more advanced phase, create a labelled data set of synthetic genuine and tampered card images. Extract features such as blur variance, edge density, OCR confidence, and logo-template similarity. Train a Random Forest classifier in Java with Smile or Weka, export the model, and replace the weighted scoring method with model probability. Keep the existing reasons dashboard as the explainability layer.
 
-## Suggested viva explanation
-
-"The application is an explainable first-stage fraud-screening system. It converts an image into measurable features, assigns a weighted risk score, and reports the exact signals that caused the score. This makes it suitable for manual review workflows, rather than making unsupported claims of official document verification."
